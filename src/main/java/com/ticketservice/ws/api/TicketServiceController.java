@@ -28,7 +28,7 @@ public class TicketServiceController {
 	 * seats in a particular level (1,4)
 	 * @PathParam is id (levelid)
 	 */
-	@RequestMapping(value="/ticketservice/levelid/{id}",
+	@RequestMapping(value= ApiEndPoints._NUM_SEATS_AVAILABL,
 			method= RequestMethod.GET,
 			produces=MediaType.APPLICATION_JSON_VALUE)
 	public SeatsAvailabilityDTO getNumSeatsAvailable(@PathVariable int id){
@@ -40,7 +40,7 @@ public class TicketServiceController {
 	 * Restful Service POST (Endpoint) finds available seats and
 	 * holds them 
 	 */
-	@RequestMapping(value = "/ticketservice/holdseats", method = RequestMethod.POST, produces={"application/json"}, consumes="application/json")
+	@RequestMapping(value = ApiEndPoints._HOLD_SEATS, method = RequestMethod.POST, produces={MediaType.APPLICATION_JSON_VALUE}, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ReservationDetails findAndHoldSeats(@RequestBody ReservationDTO reservationDto){
 		return ticketServiceInteraction.findAndHoldSeats(reservationDto);
 		
@@ -50,7 +50,7 @@ public class TicketServiceController {
 	 * Restful Service GET (Endpoint) reserves the held seats
 	 * @QueryParam is seatHoldId,customerEmailaddress
 	 */
-	@RequestMapping(value = "/ticketservice/confirm/holdseats", method = RequestMethod.GET, produces={"application/json"})
+	@RequestMapping(value = ApiEndPoints._CONFIRM_HOLD_SEATS, method = RequestMethod.GET, produces={MediaType.APPLICATION_JSON_VALUE})
 	public ConfirmReservationDTO confirmTheHoldSeats(@RequestParam("seatHoldId") Long seatHoldId,@RequestParam("customerEmail") String customerEmail ){
 		return ticketServiceInteraction.confirmTheHoldSeats(seatHoldId, customerEmail);
 	}
