@@ -1,0 +1,11 @@
+com\ticketservice\ws\dao\SeatsAvailabilityRepository.class
+com\ticketservice\ws\dao\ReservationDetailsRepository.class
+com\ticketservice\ws\interaction\TicketServiceInteraction.class
+com\ticketservice\ws\dto\SeatsAvailabilityDTO.class
+com\ticketservice\ws\model\SeatsAvailability.class
+com\ticketservice\ws\api\TicketServiceController.class
+com\ticketservice\TicketServiceApplication.class
+com\ticketservice\ws\dto\ReservationDTO.class
+com\ticketservice\ws\model\ReservationDetails.class
+com\ticketservice\ServletInitializer.class
+com\ticketservice\ws\dto\ConfirmReservationDTO.class
